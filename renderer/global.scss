@@ -1,0 +1,17 @@
+@use 'scss-reset/reset';
+@use '../src/scss/variables.scss' as *;
+@use '../src/scss/mixins.scss' as mix;
+
+// define defaults here
+
+html {
+  font-size: $html-font-size;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: #333;
+}
+
+body {
+  font-size: mix.rem(16px);
+  background-color: #fff;
+}
