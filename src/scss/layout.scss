@@ -1,6 +1,6 @@
 @use 'scss-reset/reset';
-@use '../src/scss/variables.scss' as *;
-@use '../src/scss/mixins.scss' as mix;
+@use './variables.scss' as *;
+@use './mixins.scss' as mix;
 
 // define defaults here
 
