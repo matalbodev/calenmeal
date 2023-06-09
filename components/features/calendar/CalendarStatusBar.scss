@@ -1,0 +1,26 @@
+@use "../../../scss/variables.scss" as *;
+@use "../../../scss/mixins.scss" as *;
+
+.calendar-status-bar {
+	background-color: $color-primary;
+	text-align: center;
+	padding: rem(10px) rem(20px);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	&__day {
+		color: white;
+	}
+}
+
+.calendar-status-bar-arrow {
+	&--right {
+		svg {
+			transform: rotate(180deg);
+			transform-origin: center;
+		}
+	}
+}

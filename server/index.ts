@@ -5,6 +5,7 @@ import fastify from "fastify";
 import path from "path";
 import { renderPage } from "vite-plugin-ssr/server";
 import { root } from "./root.js";
+import { createServer as createViteServer } from "vite";
 const isProduction = process.env.NODE_ENV === "production";
 
 
@@ -23,8 +24,7 @@ async function startServer() {
 			prefix: "/assets/",
 		});
   } else {
-    const vite = await import("vite");
-		const viteServer = await vite.createServer({
+		const viteServer = await createViteServer({
 			root,
 			server: { middlewareMode: true },
 		});
@@ -47,7 +47,6 @@ async function startServer() {
 		return reply.status(statusCode).type(contentType).send(body);
 	});
 
-  
 	const port: number = process.env.PORT ? +process.env.PORT : 3000;
 
 	app.listen({ port });

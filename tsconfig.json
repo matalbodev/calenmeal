@@ -5,10 +5,13 @@
 		"target": "ES2020",
 		"moduleResolution": "Node",
 		"lib": ["DOM", "DOM.Iterable", "ESNext"],
-		"types": ["vite/client"],
+		"types": ["vite/client", "vite-plugin-svgr/client"],
 		"jsx": "react-jsx",
 		"skipLibCheck": true,
-		"esModuleInterop": true
+		"esModuleInterop": true,
+		"paths": {
+			"#root/*": ["./*"],
+		}
 	},
 	"ts-node": {
 		"transpileOnly": true,

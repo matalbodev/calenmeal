@@ -1,5 +1,5 @@
+import '#root/scss/layout.scss'
 import { Header } from "./Header"
-import '../../scss/layout.scss'
 
 export { LayoutDefault }
 

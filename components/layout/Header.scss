@@ -1,0 +1,21 @@
+@use "../../scss/variables.scss" as *;
+@use "../../scss/mixins.scss" as *;
+
+header#header {
+	background-color: $color-secondary;
+	text-align: center;
+	padding: rem(16px);
+  display: flex;
+	align-items: center;
+	a {
+    font-size: rem(32px);
+		color: $color-primary;
+		text-decoration: none;
+		font-weight: 900;
+		text-transform: uppercase;
+		flex:1;
+		&:hover {
+			color: $color-primary-dark;
+		}
+	}
+}

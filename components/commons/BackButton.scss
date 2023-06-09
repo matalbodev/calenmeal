@@ -1,0 +1,19 @@
+@use "../../scss/variables.scss" as *;
+@use "../../scss/mixins.scss" as *;
+.back-button {
+  margin-right: auto;
+  background-color: $color-primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: rem(32px);
+  height: rem(32px);
+  svg {
+    fill: $color-secondary;
+    width: rem(11px);
+    height: rem(16px);
+    display: block;
+    transform: translateX(rem(-2px));
+  }
+}

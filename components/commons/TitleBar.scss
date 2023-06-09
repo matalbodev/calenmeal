@@ -1,0 +1,12 @@
+@use "../../scss/variables" as *;
+@use "../../scss/mixins" as *;
+.title-bar {
+  text-align: center;
+	background-color: $color-tertiary;
+	padding: rem(10px) rem(20px);
+	position: sticky;
+	top: 0;
+	z-index: 1;
+  color:white;
+  font-weight: 600;
+}

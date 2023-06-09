@@ -1,0 +1,16 @@
+@use '../../scss/variables' as *;
+.button {
+  display: inline-block;
+  padding: .75rem 2rem;
+  text-decoration: none;
+  border-radius: 0.3rem;
+
+  &--primary {
+    background-color: $color-primary;
+    color:white;
+  }
+  &--tertiary {
+    background-color: $color-tertiary;
+    color:white;
+  }
+}
