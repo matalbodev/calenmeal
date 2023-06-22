@@ -6,13 +6,19 @@ import path from "path";
 import { renderPage } from "vite-plugin-ssr/server";
 import { root } from "./root.js";
 import { createServer as createViteServer } from "vite";
+import fs from 'fs'
 const isProduction = process.env.NODE_ENV === "production";
 
 
 startServer();
 
 async function startServer() {
-	const app = fastify();
+	const app = fastify({
+    https: {
+      key: fs.readFileSync("./server/ssl/server.key"),
+      cert: fs.readFileSync("./server/ssl/server.crt"),
+    },
+  });
 
 	await app.register(middie);
 	await app.register(compress);
@@ -25,9 +31,15 @@ async function startServer() {
 		});
   } else {
 		const viteServer = await createViteServer({
-			root,
-			server: { middlewareMode: true },
-		});
+      root,
+      server: {
+        middlewareMode: true,
+        https: {
+          key: fs.readFileSync("./server/ssl/server.key"),
+          cert: fs.readFileSync("./server/ssl/server.crt"),
+        },
+      },
+    });
 		await app.use(viteServer.middlewares);
 	}
 
@@ -51,5 +63,5 @@ async function startServer() {
 
 	app.listen({ port });
 
-	console.log(`Server running at http://localhost:${port}`);
+	console.log(`Server running at https://localhost:${port}`);
 }

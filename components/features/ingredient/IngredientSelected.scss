@@ -1,0 +1,30 @@
+@use '../../../scss/variables.scss' as *;
+#ingredients-results-selected {
+  font-size: 0.9rem;
+  border:1px solid #424242;
+  border-radius: 0.25rem;
+  margin-top: 2rem;
+  &.hidden {
+    display: none;
+  }
+  li {
+    display: flex;
+    align-items: center;
+    padding: 0.55rem 0.75rem;
+    &:not(:last-child) {
+      border-bottom: 1px solid #424242;
+    }
+    button {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      background: red;
+      color: white;
+      border-radius: 50%;
+      line-height: 0;
+    }
+  }
+}

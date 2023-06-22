@@ -1,0 +1,51 @@
+@use "../../scss/mixins.scss" as *;
+input[type="text"],
+textarea {
+  padding: rem(9px) rem(8px);
+  border: 1px solid #1e1e1e;
+  border-radius: 3px;
+  font-size: rem(14px);
+}
+
+.input {
+  display: block;
+  &--full {
+    width: 100%;
+  }
+}
+
+.select-wrap {
+	border: 1px solid #1e1e1e;
+	display: inline-block;
+	border-radius: 3px;
+  .select {
+		border: none;
+    border-right: 6px solid transparent;
+		padding: rem(9px) rem(8px);
+		font-size: rem(14px);
+  }
+}
+
+.form-wrap {
+  margin-bottom: .5rem;
+  label {
+    display: block;
+    margin-bottom: 0.1rem;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  &--center {
+    display: flex;
+    justify-content: center;
+  }
+
+  &--withSuffix {
+    display: flex;
+    align-items: center;
+    .form-wrap-suffix {
+      margin-left: 0.5rem;
+    }
+  }
+}

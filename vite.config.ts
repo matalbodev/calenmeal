@@ -5,11 +5,11 @@ import svgr from "vite-plugin-svgr"
 
 // https://vitejs.dev/config/
 export default defineConfig({
-	plugins: [react(), ssr(), svgr()],
-	resolve: {
-		alias: {
-			// Prefix path aliases with '#'
-			"#root": __dirname,
-		},
-	},
+  plugins: [react(), ssr(), svgr()],
+  resolve: {
+    alias: {
+      // Prefix path aliases with '#'
+      "#root": __dirname,
+    },
+  },
 });

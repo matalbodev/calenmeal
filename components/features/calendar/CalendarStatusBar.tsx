@@ -2,6 +2,7 @@ import "./CalendarStatusBar.scss";
 import { ReactComponent as Arrow } from "#root/assets/icons/arrow.svg";
 import { DateToDay, FormatDate } from "#root/utils/date";
 import { useDayContext } from "#root/renderer/useDayContext";
+import { useEffect } from "react";
 
 export { CalendarStatusBar };
 
@@ -21,6 +22,20 @@ function CalendarStatusBar() {
 			dayMonth: FormatDate(newDay, "DD/MM/YY"),
 		});
 	};
+
+	useEffect(() => {
+    const today = new Date();
+    // if date is not today
+    if (day.date.getDate() !== today.getDate()) {
+      // push date to url params
+      window.history.pushState({}, "", `?date=${FormatDate(day.date, "YYYY-MM-DD")}`);
+    } else {
+      // remove date from url params
+      window.history.pushState({}, "", "/");
+    }
+    // navigate to date
+    window.dispatchEvent(new Event("popstate"));
+  }, [day]);
 
 	return (
 		<div className="calendar-status-bar">

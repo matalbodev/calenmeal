@@ -1,20 +1,37 @@
+export enum MealTime {
+	Breakfast = "breakfast",
+	Lunch = "lunch",
+	Dinner = "dinner",
+	Snack = "snack",
+}
 export interface Ingredient {
-	id: number;
-	name: string;
-	calories_per_100g: number;
+  id: number;
+  name: string;
+  calories: number;
 }
 
-interface IngredientInMeal {
-  _ingredient: Ingredient;
+export interface IngredientInMealForQuery {
   quantity: number;
+  relation: string;
 }
 
+export interface IngredientInMeal extends IngredientInMealForQuery {
+  _ingredient: Ingredient;
+}
 
 export interface Meal {
-	id: number;
+  id?: number;
   name: string;
-	mealTime: string;
-	date: Date;
-	image?: string;
-	ingredients: IngredientInMeal[];
+  mealTime: MealTime;
+  date: Date;
+  image?: string;
+  ingredients: IngredientInMeal[];
+}
+
+export interface MealForQuery {
+  name: string;
+  mealTime: MealTime;
+  date: Date;
+  image?: string;
+  ingredients: IngredientInMealForQuery[];
 }

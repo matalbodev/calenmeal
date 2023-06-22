@@ -1,0 +1,44 @@
+@use '../../scss/variables' as *;
+@use '../../scss/mixins' as *;
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.8);
+  }
+
+  &__inside {
+    background-color: white;
+    border-radius: rem(5px);
+    width: 50rem;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  &__header {
+    padding: .5rem;
+    border-bottom: 1px solid #eaeaea;
+    background-color: $color-tertiary;
+    text-align: center;
+    color: white;
+  }
+  &__content {
+    padding: 1rem .5rem;
+    text-align: center;
+  }
+}

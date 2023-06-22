@@ -1,5 +1,3 @@
-import './Content.scss'
-
 export { Content }
 
 function Content({ children }: { children: React.ReactNode }) { 

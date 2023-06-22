@@ -21,6 +21,11 @@ export type PageContextCustom = {
   Page: Page
   pageProps?: PageProps
   urlPathname: string
+  urlParsed: {
+    search: {
+      [key: string]: string
+    }
+  }
   exports: {
     documentProps?: {
       title?: string
