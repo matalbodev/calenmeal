@@ -1,28 +1,29 @@
-import fetch from "cross-fetch"
-import { usePageContext } from "#root/renderer/usePageContext";
-import { meals } from "#root/mock/meals";
 import { Meal } from "#root/types/meal.types";
+import { Fragment } from "react";
 export { Page };
-	
-	
-	
-type Fruit = {
-	name: string;
-}
 
-function Page({ data }: { data: Fruit[] }) {
-	
-	const pageContext = usePageContext();
-	const id = Number(pageContext?.routeParams?.id) || 0;
-	const meal = meals.find((meal: Meal) => meal.id === id);
-	return (
-		<div id="content">
-			<h1>{meal?.name}</h1>
-			{data.map((fruit: Fruit) => (
-				<div key={fruit.name}>{fruit.name}</div>
-			))}
-		</div>
-	);
+function Page({
+	data,
+	errorMsg
+}: {
+	data: Meal,
+	errorMsg: string
+	}) {
+
+	const meal = data
+
+	if (errorMsg) {
+		return <>{errorMsg}</>
+	}
+	return <>
+		<h1>{meal.name}</h1>
+		<p>{meal.mealTime}</p>
+		<ul>
+			{meal.ingredients.map((value, key) => (<Fragment key={key}>
+				<h2>{value.quantity}</h2>
+			</Fragment>))}
+		</ul>
+	</>
 }
 
 

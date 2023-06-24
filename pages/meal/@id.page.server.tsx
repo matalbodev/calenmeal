@@ -1,37 +1,17 @@
+import { getMeal } from '#root/api/meal';
+import { PageContext } from '#root/renderer/types';
 import fetch from 'node-fetch'
 export { onBeforeRender };
 
-async function onBeforeRender() {
-	const response = await fetch("https://fruityvice.com/api/fruit/all");
-	let data;
-	try {
-		data = await response.json();
-	} catch (error) {
-		console.error(error);
-	}
+async function onBeforeRender(pageContext: PageContext) {
+	const id = pageContext?.routeParams?.id || '';
+	const response = await getMeal(id)
+	const { data, errorMsg } = response
 	return {
 		pageContext: {
 			pageProps: {
 				data,
-			},
-		},
-	};
-}
- export { prerender };
-
-async function prerender() {
-
-	const response = await fetch("https://fruityvice.com/api/fruit/all");
-	let data;
-	try {
-		data = await response.json();
-	} catch (error) {
-		console.error(error);
-	}
-	return {
-		pageContext: {
-			pageProps: {
-				data,
+				errorMsg
 			},
 		},
 	};

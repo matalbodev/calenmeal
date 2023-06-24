@@ -25,6 +25,27 @@ export async function getMealsByDate(
   };
 }
 
+export async function getMeal(id: string): Promise<{
+  data: Meal;
+  errorMsg: string | null;
+}> {
+  let meal;
+  let errorMsg: string | null = null;
+  try {
+    const response = await customFetch(`/meal/${id}`, {
+      method: "GET",
+    });
+    meal = await response.json();
+  } catch (error) {
+    errorMsg = "Unable to fetch meal";
+  }
+
+  return {
+    data: meal,
+    errorMsg,
+  };
+}
+
 
 
 export async function postMeal(body: MealForQuery): Promise<Meal> {

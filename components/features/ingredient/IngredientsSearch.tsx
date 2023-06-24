@@ -2,7 +2,7 @@ import { FC, useDeferredValue, useEffect, useRef, useState } from "react";
 import { Ingredient } from "#root/types/meal.types";
 import { Input } from "#root/components/commons/Input";
 import { useModalContext } from "#root/renderer/useModalContext";
-import { IngredientAdd } from "./IngredientAdd";
+import { IngredientAddQuantity } from "./IngredientAddQuantity";
 import "./IngredientSearch.scss";
 import { useIngredientContext } from "#root/hooks/useIngredient";
 
@@ -52,11 +52,7 @@ const IngredientSearch: FC = () => {
               resetSearch();
               setModal({
                 title: `Choose a quantity for ${ingredient.name}`,
-                content: (
-                  <>
-                    <IngredientAdd ingredient={ingredient} addIngredient={addIngredient} />
-                  </>
-                ),
+                content: <IngredientAddQuantity ingredient={ingredient} addIngredient={addIngredient} />,
               });
             }}
           >

@@ -4,9 +4,9 @@ import { useModalContext } from "#root/renderer/useModalContext";
 import { Ingredient } from "#root/types/meal.types";
 import { useState } from "react";
 
-export { IngredientAdd };
+export { IngredientAddQuantity };
 
-function IngredientAdd({
+function IngredientAddQuantity({
   ingredient,
   addIngredient,
 }: {
@@ -25,7 +25,7 @@ function IngredientAdd({
         <Input type="text" name="quantity" id="quantity" placeholder="quantity" onChange={handleQuantity} />
         <div className="form-wrap-suffix">gr</div>
       </div>
-      <div className="ingredient__total">{Number(ingredient.calories * (quantity / 100))}kcal</div>
+      <div className="ingredient__total">{Math.round(Number(ingredient.calories * (quantity / 100)))}kcal</div>
       <Button type="button" markup="button" color="secondary" onClick={closeModal}>
         Cancel
       </Button>

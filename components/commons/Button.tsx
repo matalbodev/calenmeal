@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ComponentProps } from "react";
 import "./Button.scss";
 export { Button };
 
@@ -6,8 +6,8 @@ type ButtonProps = {
 	markup: 'button' | 'a';
 	children: React.ReactNode;
   color?: 'primary' | 'secondary' | 'tertiary';
-} & React.ButtonHTMLAttributes<HTMLButtonElement> &
-	React.AnchorHTMLAttributes<HTMLAnchorElement>;
+} & ComponentProps<'button'> &
+	ComponentProps<'a'>;
 
 function Button({ markup = 'button', children, color, ...otherProps }: ButtonProps){
 

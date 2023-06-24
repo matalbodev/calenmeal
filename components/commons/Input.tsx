@@ -1,3 +1,4 @@
+import { ComponentProps } from "react";
 import "./Input.scss";
 
 export { Input };
@@ -5,7 +6,7 @@ export { Input };
 type InputProps = {
 	isFull?: boolean;
 	inputRef?: React.Ref<HTMLInputElement>;
-} & React.InputHTMLAttributes<HTMLInputElement>;
+} & ComponentProps<'input'>;
 
 function Input({ isFull, inputRef, ...props }: InputProps) {
 	return <input ref={inputRef}  className={`input ${isFull ? "input--full" : ""}`} {...props} />;
