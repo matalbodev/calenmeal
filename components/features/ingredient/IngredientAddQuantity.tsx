@@ -22,7 +22,7 @@ function IngredientAddQuantity({
     <div className="ingredient">
       {ingredient.calories}kcal/100gr
       <div className="form-wrap form-wrap--withSuffix form-wrap--center">
-        <Input type="text" name="quantity" id="quantity" placeholder="quantity" onChange={handleQuantity} />
+        <Input type="text" name="quantity" id="quantity" placeholder="quantity" defaultValue={100} onChange={handleQuantity} />
         <div className="form-wrap-suffix">gr</div>
       </div>
       <div className="ingredient__total">{Math.round(Number(ingredient.calories * (quantity / 100)))}kcal</div>

@@ -1,8 +1,8 @@
 export enum MealTime {
-	Breakfast = "breakfast",
-	Lunch = "lunch",
-	Dinner = "dinner",
-	Snack = "snack",
+  Breakfast = "breakfast",
+  Lunch = "lunch",
+  Dinner = "dinner",
+  Snack = "snack",
 }
 export interface Ingredient {
   id: number;
@@ -14,24 +14,53 @@ export interface IngredientInMealForQuery {
   quantity: number;
   relation: string;
 }
+export interface IngredientInMealFromQuery {
+  quantity: number;
+  relation: Ingredient;
+}
 
 export interface IngredientInMeal extends IngredientInMealForQuery {
   _ingredient: Ingredient;
 }
 
 export interface Meal {
-  id?: number;
+  id: string;
   name: string;
   mealTime: MealTime;
   date: Date;
   image?: string;
-  ingredients: IngredientInMeal[];
+  ingredients: IngredientInMealFromQuery[];
+}
+export interface CalendarMeal {
+  id: string;
+  date: Date;
+  relatedMeal: {
+    name: string;
+    mealTime: MealTime;
+    image?: string;
+    ingredients: IngredientInMealFromQuery[];
+  };
 }
 
-export interface MealForQuery {
-  name: string;
-  mealTime: MealTime;
+export interface CalendarMealForQuery {
   date: Date;
-  image?: string;
-  ingredients: IngredientInMealForQuery[];
+  relatedMeal: {
+    name: string;
+    mealTime: MealTime;
+    image?: string;
+    ingredients: IngredientInMealForQuery[];
+  };
+}
+
+export enum Filter {
+  "all",
+  "date",
+}
+
+export enum MealTimeFilter {
+  ALL = "all",
+  BREAKFAST = "breakfast",
+  LUNCH = "lunch",
+  SNACK = "snack",
+  DINNER = "dinner",
 }

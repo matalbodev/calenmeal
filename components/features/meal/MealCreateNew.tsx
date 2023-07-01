@@ -1,33 +1,33 @@
 import { postMeal } from "#root/api/meal";
 import { Button } from "#root/components/commons/Button";
 import { useIngredientContext } from "#root/hooks/useIngredient";
-import { MealForQuery } from "#root/types/meal.types";
+import { CalendarMealForQuery } from "#root/types/meal.types";
+import { FormatDate } from "#root/utils/date";
 import { FC } from "react";
 
 const MealCreateNew: FC<{
-  mealState: MealForQuery;
+  mealState: CalendarMealForQuery;
 }> = ({ mealState }) => {
   const { selectedIngredients } = useIngredientContext();
   const handlePostMeal = async () => {
-    const body: MealForQuery = {
+    const meal = mealState.relatedMeal;
+    meal.ingredients = selectedIngredients.map((el) => {
+      const { _ingredient, ...rest } = el; // eslint-disable-line
+      return rest;
+    });
+    const body: CalendarMealForQuery = {
       ...mealState,
-      ingredients: selectedIngredients.map((el) => {
-        const { _ingredient, ...rest } = el; // eslint-disable-line
-        return rest;
-      }),
     };
-    await postMeal(body);
+    const res = await postMeal(body);
+    if (res.name) {
+      window.history.pushState({}, "", `/?date=${FormatDate(mealState.date, "YYYY-MM-DD")}`);
+      window.dispatchEvent(new Event("popstate"));
+    }
   };
   return (
-    <div
-      style={{
-        textAlign: "center",
-      }}
-    >
-      <Button markup="button" type="button" color="primary" onClick={handlePostMeal}>
-        Save
-      </Button>
-    </div>
+    <Button markup="button" type="button" color="secondary" onClick={handlePostMeal} isFull>
+      Save
+    </Button>
   );
 };
 

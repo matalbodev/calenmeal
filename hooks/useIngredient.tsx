@@ -1,6 +1,6 @@
 import { getIngredients } from "#root/api/ingredients";
-import { Ingredient, IngredientInMeal } from "#root/types/meal.types";
-import { PropsWithChildren, createContext, useContext, useState } from "react";
+import {Ingredient, IngredientInMeal, IngredientInMealForQuery} from "#root/types/meal.types";
+import {PropsWithChildren, createContext, useContext, useState, SetStateAction} from "react";
 import { useQuery } from "react-query";
 
 
@@ -23,13 +23,13 @@ const IngredientsForMealProvider = ({ children }: PropsWithChildren) => {
   const { data : ingredients, error, isLoading } = useQuery("ingredients", getIngredients);
   const [selectedIngredients, setSelectedIngredients] = useState<IngredientInMeal[]>([]);
   const addIngredient = ({ ingredient, quantity }: { ingredient: Ingredient; quantity: number }) => {
-    const newIngredient = {
+    const newIngredient : IngredientInMeal = {
       _ingredient: ingredient,
       relation: `/ingredients/${ingredient.id}`,
       quantity: quantity,
     };
     if (selectedIngredients.find((el) => el._ingredient.id === ingredient.id)) return;
-    setSelectedIngredients((prevState) => [...prevState, newIngredient]);
+    setSelectedIngredients((prevState: IngredientInMeal[]) => [...prevState, newIngredient]);
   };
 
   const removeIngredient = (ingredient: Ingredient) => {

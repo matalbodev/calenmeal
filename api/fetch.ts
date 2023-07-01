@@ -22,5 +22,7 @@ export default function customFetch(endpoint: string, options?: FetchOptions) {
       'content-type': 'application/json',
     },
   };
+
+
   return fetch(`${VITE_API_URL}${endpoint}`, mergedOptions);
 }

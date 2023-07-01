@@ -2,18 +2,24 @@
 @use "../../scss/mixins.scss" as *;
 
 header#header {
-	background-color: $color-secondary;
+	background-color: $color-primary;
 	text-align: center;
 	padding: rem(16px);
-  display: flex;
-	align-items: center;
+	font-size: rem(32px);
+
+	&.has-back-button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.title {
+		flex:1;
+	}
 	a {
-    font-size: rem(32px);
 		color: $color-primary;
 		text-decoration: none;
 		font-weight: 900;
 		text-transform: uppercase;
-		flex:1;
 		&:hover {
 			color: $color-primary-dark;
 		}

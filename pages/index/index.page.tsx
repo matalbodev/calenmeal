@@ -1,33 +1,34 @@
 import { CalendarStatusBar } from "#root/components/features/calendar/CalendarStatusBar";
-import { Content } from "#root/components/layout/Content";
-//import { meals } from "#root/mock/meals";
 import { MealCard } from "#root/components/features/meal/MealCard";
-import { Meal } from "#root/types/meal.types";
+import { Filter, Meal } from "#root/types/meal.types";
 import { Button } from "#root/components/commons/Button";
+import { LayoutDefault as Layout } from "#root/layouts/LayoutDefault";
+import { useQuery } from "react-query";
+import { getMealsByDate } from "#root/api/meal";
+import useDate from "#root/hooks/useDate";
+import { useState } from "react";
+import { MealsEmpty } from "#root/components/features/meal/MealsEmpty";
+import { TitleBar } from "#root/components/commons/TitleBar";
+import { MealsList } from "#root/components/features/meal/MealsList";
 
 export { Page };
 
-function Page(props: { data: Meal[]; errorMsg?: string }) {
-  const { data: meals, errorMsg } = props;
-  
-  console.log("meals", meals);
-  const mealsEmpty = meals?.length === 0;
+enum MealTimeFilter {
+  ALL = 'all',
+  BREAKFAST = 'breakfast',
+  LUNCH = 'lunch',
+  DINNER = 'dinner'
+}
+
+function Page({ SSRMeals }: { SSRMeals: Meal[] }) {
+  const [mealTimeFilter, setMealTimeFilter] = useState<MealTimeFilter>(MealTimeFilter['ALL'])
+  const { dayReadable } = useDate();
   return (
-    <>
-      <CalendarStatusBar />
-      <Content>
-        {errorMsg && <p>{errorMsg}</p>}
-        {!mealsEmpty ? meals?.map((meal: Meal) => <MealCard key={meal.id} meal={meal} />) : <p>No meals</p>}
-        <div
-          style={{
-            textAlign: "center",
-          }}
-        >
-          <Button color="tertiary" markup="a" href="/meal/new">
-            Add meal
-          </Button>
-        </div>
-      </Content>
-    </>
+    <Layout title="Hello, Mathieu">
+      <MealsList SSRMeals={SSRMeals} filter={Filter.date} />
+      <Button color="secondary" markup="a" href={`/meal/new/?date=${dayReadable}`} isFull>
+        Add meal
+      </Button>
+    </Layout>
   );
 }
