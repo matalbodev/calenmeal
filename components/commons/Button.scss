@@ -1,9 +1,11 @@
 @use '../../scss/variables' as *;
 .button {
   display: inline-block;
-  padding: .75rem 2rem;
+  padding: .95rem 2rem;
   text-decoration: none;
-  border-radius: 0.3rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  text-align: center;
 
   &--primary {
     background-color: $color-primary;
@@ -12,5 +14,14 @@
   &--tertiary {
     background-color: $color-tertiary;
     color:white;
+  }
+
+  &--secondary {
+    background-color: $color-secondary;
+    color: white
+  }
+
+  &--full {
+    width: 100%;
   }
 }

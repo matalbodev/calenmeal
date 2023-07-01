@@ -1,33 +1,37 @@
-import { Meal, MealTime } from "#root/types/meal.types";
+import { CalendarMealForQuery, MealTime } from "#root/types/meal.types";
 import { useState } from "react";
 
 export { useMeal };
 
 function useMeal({ day }: { day: Date }) {
-  const [mealState, setMealState] = useState<Meal>({
-    name: "",
+  const [mealState, setMealState] = useState<CalendarMealForQuery>({
     date: day,
-    mealTime: MealTime.Breakfast,
-    ingredients: [],
+    relatedMeal: {
+      name: "",
+      mealTime: MealTime.Breakfast,
+      ingredients: [],
+    },
   });
 
   const changeMealTime = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const value = e.target.value as MealTime;
     setMealState((prevState) => {
-      prevState.mealTime = value;
+      const meal = prevState.relatedMeal;
+      meal.mealTime = value;
       return prevState;
     });
   };
   const changeName = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setMealState((prevState) => ({
-      ...prevState,
-      name: e.target.value,
-    }));
+    setMealState((prevState) => {
+      const meal = prevState.relatedMeal;
+      meal.name = e.target.value
+      return prevState;
+    });
   };
   return {
     mealState,
     setMealState,
     changeMealTime,
-    changeName
+    changeName,
   };
 }

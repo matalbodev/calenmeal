@@ -2,7 +2,7 @@
 @use "../../../scss/mixins.scss" as *;
 
 .calendar-status-bar {
-	background-color: $color-primary;
+	background-color: $color-secondary;
 	text-align: center;
 	padding: rem(10px) rem(20px);
 	display: flex;
@@ -12,7 +12,8 @@
 	top: 0;
 	z-index: 1;
 	&__day {
-		color: white;
+		color: #fff;
+		font-size: 1.5rem;
 	}
 }
 

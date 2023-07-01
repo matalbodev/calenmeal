@@ -2,6 +2,8 @@
 @use './variables.scss' as *;
 @use './mixins.scss' as mix;
 
+@import './typography.scss';
+
 // define defaults here
 
 html {
@@ -13,10 +15,23 @@ html {
 
 body {
   font-size: mix.rem(16px);
-  background-color: #fff;
 }
 
+p {
+  line-height: 1.3;
+}
 
+strong {
+  font-weight: 700;
+}
+
+#layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
 #content {
-  padding: 2rem;
+  padding: 2rem 1rem;
+  flex: 1 1 auto;
+  overflow: auto;
 }

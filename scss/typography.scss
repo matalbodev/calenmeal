@@ -1,0 +1,7 @@
+@use './mixins.scss' as *;
+.title-md {
+  font-size: rem(20);
+  font-weight: 700;
+  font-family: "Poppins";
+  margin-bottom: 1.5rem;
+}

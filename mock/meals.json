@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Meal 1",
+    "date": "2023-06-26T09:21:52.498Z",
+    "mealTime": "lunch",
+    "ingredients": [
+      {
+        "relation": "/ingredients/4",
+        "quantity": 456
+      },
+      {
+        "relation": "/ingredients/2",
+        "quantity": 678
+      }
+    ]
+  },
+  {
+    "name": "Meal 2",
+    "date": "2023-06-26T09:21:52.498Z",
+    "mealTime": "lunch",
+    "ingredients": [
+      {
+        "relation": "/ingredients/4",
+        "quantity": 456
+      },
+      {
+        "relation": "/ingredients/2",
+        "quantity": 678
+      }
+    ]
+  },
+  {
+    "name": "Meal 3",
+    "date": "2023-06-26T09:21:52.498Z",
+    "mealTime": "lunch",
+    "ingredients": [
+      {
+        "relation": "/ingredients/4",
+        "quantity": 456
+      },
+      {
+        "relation": "/ingredients/2",
+        "quantity": 678
+      }
+    ]
+  },
+  {
+    "name": "Meal 4",
+    "date": "2023-06-26T09:21:52.498Z",
+    "mealTime": "lunch",
+    "ingredients": [
+      {
+        "relation": "/ingredients/4",
+        "quantity": 456
+      },
+      {
+        "relation": "/ingredients/2",
+        "quantity": 678
+      }
+    ]
+  },
+  {
+    "name": "Meal 5",
+    "date": "2023-06-26T09:21:52.498Z",
+    "mealTime": "lunch",
+    "ingredients": [
+      {
+        "relation": "/ingredients/4",
+        "quantity": 456
+      },
+      {
+        "relation": "/ingredients/2",
+        "quantity": 678
+      }
+    ]
+  },
+  {
+    "name": "Meal ^",
+    "date": "2023-06-26T09:21:52.498Z",
+    "mealTime": "lunch",
+    "ingredients": [
+      {
+        "relation": "/ingredients/4",
+        "quantity": 456
+      },
+      {
+        "relation": "/ingredients/2",
+        "quantity": 678
+      }
+    ]
+  }
+]

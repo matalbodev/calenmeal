@@ -1,15 +1,28 @@
-@use '../../../scss/variables.scss' as *;
-@use '../../../scss/mixins.scss' as *;
+@use "../../../scss/variables.scss" as *;
+@use "../../../scss/mixins.scss" as *;
 
 .meal-card {
-  border-radius: 5px;
+  border-radius: 15px;
   overflow: hidden;
-  margin-bottom: rem(32px);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: rem(16px);
 
   &__thumbnail {
     position: relative;
-    height: rem(90px);
+    height: rem(150px);
+    background-color: #112028;
+  }
+
+  &__delete {
+    background-color: #ddd;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
   }
 
   &__image {
@@ -17,6 +30,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+    display: none;
   }
 
   &__tag {
@@ -24,9 +38,14 @@
     top: rem(10px);
     left: rem(10px);
     background-color: $color-primary;
-    color: white;
+    color: $color-secondary;
     padding: rem(10px) rem(20px);
     border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-family: "Poppins";
+    font-weight: 700;
   }
 
   &__title {
@@ -35,9 +54,12 @@
     align-items: center;
     background-color: $color-primary;
     padding: rem(10px) rem(20px);
+    border-top: 1px solid #fff;
   }
   &__name {
-    color: white;
+    color: $color-secondary;
+    font-weight: 500;
+    font-size: 18px;
   }
 
   &__arrow {

@@ -4,15 +4,13 @@ import { BackButton } from "../commons/BackButton";
 
 export { Header };
 
-function Header() {
-	const pageContext = usePageContext();
-	const className = [pageContext.urlPathname === "/" && "is-active"].filter(Boolean).join(" ");
-	return (
-		<header id="header">
-			<BackButton />
-			<a href="/" className={className}>
-				Calenmeal
-			</a>
-		</header>
-	);
+function Header(props: { title: string }) {
+  const pageContext = usePageContext();
+  const isIndex = pageContext.urlPathname === "/";
+  return (
+    <header id="header" className={isIndex ? "" : "has-back-button"}>
+      {!isIndex && <BackButton />}
+      <div className="title">{props.title}</div>
+    </header>
+  );
 }

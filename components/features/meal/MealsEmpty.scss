@@ -1,0 +1,14 @@
+@use "../../../scss/variables.scss" as *;
+@use "../../../scss/mixins.scss" as *;
+
+.meals-empty {
+  text-align: center;
+  padding: 1rem;
+  background-color: $color-primary;
+  border-radius: 32px;
+  margin: 2rem 0;
+  &__title {
+    font-size: rem(20px);
+    margin-bottom: 0.5rem;
+  }
+}
