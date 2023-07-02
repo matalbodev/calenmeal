@@ -18,6 +18,8 @@ function MealsList({ filter }: { filter: Filter }) {
     [key: string]: {
       queryKey: string[];
       queryFn: () => Promise<Meal[]>;
+      enabled?: boolean;
+      refetchOnWindowFocus?: boolean
     };
   } = {
     all: {
@@ -30,6 +32,8 @@ function MealsList({ filter }: { filter: Filter }) {
         const meals = await getMealsByDate(dayReadable);
         return ConvertCalendarMealsToMeal(meals);
       },
+      enabled: !!dayReadable,
+      refetchOnWindowFocus: true,
     },
   };
 
@@ -40,8 +44,6 @@ function MealsList({ filter }: { filter: Filter }) {
     isLoading,
   } = useQuery({
     ...query,
-    enabled: !!dayReadable,
-    refetchOnWindowFocus: true,
   });
   if (error) {
     return <p>Error</p>;

@@ -3,10 +3,10 @@ import { MealsList } from "#root/components/features/meal/MealsList"
 import { LayoutDefault as Layout } from "#root/layouts/LayoutDefault"
 import { Filter } from "#root/types/meal.types"
 
-export { Page, prefetchQueries }
+export { Page, prefetchQueries };
 const prefetchQueries = {
   meals: {
-    fn: getMeals(),
+    fn: () => getMeals(),
   },
 };
 function Page() {

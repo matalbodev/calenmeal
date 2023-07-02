@@ -3,13 +3,14 @@ import { Button } from "#root/components/commons/Button";
 import { LayoutDefault as Layout } from "#root/layouts/LayoutDefault";
 import useDate from "#root/hooks/useDate";
 import { MealsList } from "#root/components/features/meal/MealsList";
-import { getMeals } from "#root/api/meal";
+import { getMeals, getMealsByDate } from "#root/api/meal";
+import { FormatDate } from "#root/utils/date";
 
 export { Page, prefetchQueries };
 
 const prefetchQueries = {
-  meals: {
-    fn: getMeals(),
+  mealsByDate: {
+    fn: () => getMealsByDate(FormatDate(new Date(), 'YYYY-MM-DD')),
   },
 };
 
