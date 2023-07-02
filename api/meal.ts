@@ -21,7 +21,6 @@ export async function getMealsByDate(date: string): Promise<CalendarMeal[]> {
 }
 
 export function ConvertCalendarMealsToMeal(meals: CalendarMeal[]) {
-  console.log(meals)
   return meals.map((meal) => ({
     date: meal.date,
     ...meal.relatedMeal,

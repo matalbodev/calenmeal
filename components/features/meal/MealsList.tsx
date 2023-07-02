@@ -1,6 +1,6 @@
 import { ConvertCalendarMealsToMeal, getMeals, getMealsByDate } from "#root/api/meal";
 import useDate from "#root/hooks/useDate";
-import { CalendarMeal, Filter, Meal, MealTimeFilter } from "#root/types/meal.types";
+import { Filter, Meal, MealTimeFilter } from "#root/types/meal.types";
 import { useQuery } from "react-query";
 import { MealCard } from "./MealCard";
 import { MealsEmpty } from "./MealsEmpty";
@@ -9,7 +9,7 @@ import { Fragment, useState } from "react";
 
 export { MealsList };
 
-function MealsList({ SSRMeals, filter }: { SSRMeals: Meal[]; filter: Filter }) {
+function MealsList({ filter }: { filter: Filter }) {
   const [mealTimeFilter, setMealTimeFilter] = useState<string>(Object.keys(MealTimeFilter)[0]);
 
   const { dayReadable } = useDate();
@@ -42,7 +42,6 @@ function MealsList({ SSRMeals, filter }: { SSRMeals: Meal[]; filter: Filter }) {
     ...query,
     enabled: !!dayReadable,
     refetchOnWindowFocus: true,
-    placeholderData: SSRMeals,
   });
   if (error) {
     return <p>Error</p>;
@@ -54,7 +53,6 @@ function MealsList({ SSRMeals, filter }: { SSRMeals: Meal[]; filter: Filter }) {
     return <MealsEmpty />;
   }
 
-  console.log(meals);
   return (
     <div className="meals-list">
       <ul className="meals-list__filter">
