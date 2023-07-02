@@ -1,4 +1,4 @@
-import { ConvertCalendarMealsToMeal, getMealsByDate } from "#root/api/meal";
+import { ConvertCalendarMealsToMeal, getMealsByDate } from "#root/features/meals/api";
 import { PageContext } from "#root/renderer/types";
 import { FormatDate } from "#root/utils/date";
 export { onBeforeRender };

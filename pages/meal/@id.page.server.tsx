@@ -1,4 +1,4 @@
-import { getMeal } from '#root/api/meal';
+import { getMeal } from '#root/features/meals/api';
 import { PageContext } from '#root/renderer/types';
 export { onBeforeRender };
 

@@ -1,7 +1,7 @@
-import { Button } from "#root/components/commons/Button";
-import { Input } from "#root/components/commons/Input";
+import { Button } from "#root/features/commons/Button";
+import { Input } from "#root/features/commons/Input";
 import { useModalContext } from "#root/renderer/useModalContext";
-import { Ingredient } from "#root/types/meal.types";
+import { Ingredient } from "#root/features/meals/types";
 import { useState } from "react";
 
 export { IngredientAddQuantity };

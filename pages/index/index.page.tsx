@@ -1,9 +1,9 @@
-import { Filter } from "#root/types/meal.types";
-import { Button } from "#root/components/commons/Button";
+import { Filter } from "#root/features/meals/types";
+import { Button } from "#root/features/commons/Button";
 import { LayoutDefault as Layout } from "#root/layouts/LayoutDefault";
-import useDate from "#root/hooks/useDate";
-import { MealsList } from "#root/components/features/meal/MealsList";
-import { getMeals, getMealsByDate } from "#root/api/meal";
+import useDate from "#root/features/calendar/hooks/useDate";
+import { MealsList } from "#root/features/meals/components/MealsList";
+import { getMeals, getMealsByDate } from "#root/features/meals/api";
 import { FormatDate } from "#root/utils/date";
 
 export { Page, prefetchQueries };

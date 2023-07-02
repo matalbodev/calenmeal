@@ -1,9 +1,9 @@
-import { CalendarStatusBar } from "#root/components/features/calendar/CalendarStatusBar";
-import { Filter, Meal } from "#root/types/meal.types";
-import { Button } from "#root/components/commons/Button";
+import { CalendarStatusBar } from "#root/features/calendar/components/CalendarStatusBar";
+import { Filter, Meal } from "#root/features/meals/types";
+import { Button } from "#root/features/commons/Button";
 import { LayoutDefault as Layout } from "#root/layouts/LayoutDefault";
-import useDate from "#root/hooks/useDate";
-import { MealsList } from "#root/components/features/meal/MealsList";
+import useDate from "#root/features/calendar/hooks/useDate";
+import { MealsList } from "#root/features/meals/components/MealsList";
 
 export { Page };
 function Page({ SSRMeals }: { SSRMeals: Meal[] }) {

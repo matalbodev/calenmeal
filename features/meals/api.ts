@@ -1,4 +1,4 @@
-import { CalendarMeal, Meal, CalendarMealForQuery } from "#root/types/meal.types";
+import { CalendarMeal, Meal, CalendarMealForQuery } from "#root/features/meals/types";
 import customFetch from "#root/api/fetch";
 import { FormatDate } from "#root/utils/date";
 

@@ -1,11 +1,11 @@
-import { TitleBar } from "#root/components/commons/TitleBar";
-import { IngredientSearch } from "#root/components/features/ingredient/IngredientsSearch";
-import { Input } from "#root/components/commons/Input";
-import { IngredientsForMealProvider } from "#root/hooks/useIngredient";
-import { useMeal } from "#root/hooks/useMeal";
-import { IngredientsSelected } from "#root/components/features/ingredient/IngredientsSelected";
-import { MealCreateNew } from "#root/components/features/meal/MealCreateNew";
-import useDate from "#root/hooks/useDate";
+import { TitleBar } from "#root/features/commons/TitleBar";
+import { IngredientSearch } from "#root/features/ingredients/components/IngredientsSearch";
+import { Input } from "#root/features/commons/Input";
+import { IngredientsForMealProvider } from "#root/features/ingredients/hooks/useIngredient";
+import { useMeal } from "#root/features/meals/hooks/useMeal";
+import { IngredientsSelected } from "#root/features/ingredients/components/IngredientsSelected";
+import { MealCreateNew } from "#root/features/meals/components/MealCreateNew";
+import useDate from "#root/features/calendar/hooks/useDate";
 import { LayoutDefault as Layout } from "#root/layouts/LayoutDefault";
 
 export { Page };

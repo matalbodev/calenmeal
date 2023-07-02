@@ -1,5 +1,5 @@
 import { getIngredients } from "#root/api/ingredients";
-import {Ingredient, IngredientInMeal, IngredientInMealForQuery} from "#root/types/meal.types";
+import {Ingredient, IngredientInMeal, IngredientInMealForQuery} from "#root/features/meals/types";
 import {PropsWithChildren, createContext, useContext, useState, SetStateAction} from "react";
 import { useQuery } from "react-query";
 

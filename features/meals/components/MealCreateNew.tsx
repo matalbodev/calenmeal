@@ -1,7 +1,7 @@
-import { postMeal } from "#root/api/meal";
-import { Button } from "#root/components/commons/Button";
-import { useIngredientContext } from "#root/hooks/useIngredient";
-import { CalendarMealForQuery } from "#root/types/meal.types";
+import { postMeal } from "#root/features/meals/api";
+import { Button } from "#root/features/commons/Button";
+import { useIngredientContext } from "#root/features/ingredients/hooks/useIngredient";
+import { CalendarMealForQuery } from "#root/features/meals/types";
 import { FormatDate } from "#root/utils/date";
 import { FC } from "react";
 
