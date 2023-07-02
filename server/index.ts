@@ -8,8 +8,7 @@ import { root } from "./root.js";
 import { createServer as createViteServer } from "vite";
 import fs from 'fs'
 const isProduction = process.env.NODE_ENV === "production";
-
-
+const host = "192.168.1.23";
 startServer();
 
 async function startServer() {
@@ -33,7 +32,8 @@ async function startServer() {
 		const viteServer = await createViteServer({
       root,
       server: {
-        middlewareMode: true,
+				middlewareMode: true,
+				host: host,
         https: {
           key: fs.readFileSync("./server/ssl/server.key"),
           cert: fs.readFileSync("./server/ssl/server.crt"),
@@ -61,7 +61,8 @@ async function startServer() {
 
 	const port: number = process.env.PORT ? +process.env.PORT : 3000;
 
+	app.listen({ port, host });
 	app.listen({ port });
 
-	console.log(`Server running at https://localhost:${port}`);
+	console.log(`Server running at https://${host}:${port}`);
 }
