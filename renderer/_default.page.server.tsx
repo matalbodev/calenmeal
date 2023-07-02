@@ -1,21 +1,45 @@
-export { render }
-// See https://vite-plugin-ssr.com/data-fetching
-export const passToClient = ['pageProps', 'routeParams']
 
 import ReactDOMServer from 'react-dom/server'
 import { PageShell } from './PageShell'
 import { escapeInject, dangerouslySkipEscape } from 'vite-plugin-ssr/server'
 import type { PageContextServer } from './types'
+import { dehydrate, Hydrate, QueryClient, QueryClientProvider } from "react-query";
 
+export { render }
+// See https://vite-plugin-ssr.com/data-fetching
+export const passToClient = ["pageProps", "routeParams", "dehydratedState"];
 async function render(pageContext: PageContextServer) {
-  const { Page, pageProps } = pageContext
-  // This render() hook only supports SSR, see https://vite-plugin-ssr.com/render-modes for how to modify render() to support SPA
+  const { Page, pageProps, exports: { prefetchQueries } } = pageContext
   if (!Page) throw new Error('My render() hook expects pageContext.Page to be defined')
+  const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        cacheTime: 1000 * 60 * 10,
+        staleTime: Infinity,
+        retryDelay: 2000,
+      },
+    },
+  });
+
+  if (prefetchQueries?.constructor == Object) {
+    const queries: Promise<void>[] = [];
+    Object.entries(prefetchQueries).forEach(([key, query]) => {
+      queries.push(queryClient.prefetchQuery([key], query.fn));
+    });
+
+    await Promise.all(queries);
+  }
+  const dehydratedState = dehydrate(queryClient);
+  pageContext.dehydratedState = dehydratedState;
   const pageHtml = ReactDOMServer.renderToString(
-    <PageShell pageContext={pageContext}>
-      <Page {...pageProps} />
-    </PageShell>
-  )
+    <QueryClientProvider client={queryClient}>
+      <Hydrate state={dehydratedState}>
+          <PageShell pageContext={pageContext}>
+            <Page {...pageProps} />
+          </PageShell>
+      </Hydrate>
+    </QueryClientProvider>
+  );
 
   // See https://vite-plugin-ssr.com/head
   const { documentProps } = pageContext.exports

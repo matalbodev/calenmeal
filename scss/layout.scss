@@ -1,14 +1,14 @@
-@use 'scss-reset/reset';
-@use './variables.scss' as *;
-@use './mixins.scss' as mix;
+@use "scss-reset/reset";
+@use "./variables.scss" as *;
+@use "./mixins.scss" as mix;
 
-@import './typography.scss';
+@import "./typography.scss";
 
 // define defaults here
 
 html {
   font-size: $html-font-size;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   color: #333;
 }
@@ -28,7 +28,9 @@ strong {
 #layout {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
 }
 #content {
   padding: 2rem 1rem;
