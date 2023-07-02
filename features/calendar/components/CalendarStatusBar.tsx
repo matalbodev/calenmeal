@@ -1,4 +1,4 @@
-import "./CalendarStatusBar.scss";
+import "../styles/CalendarStatusBar.scss";
 import { ReactComponent as Arrow } from "#root/assets/icons/arrow.svg";
 import { FormatDate } from "#root/utils/date";
 import { usePageContext } from "#root/renderer/usePageContext";

@@ -1,4 +1,4 @@
-import { Modal } from "#root/components/layout/Modal";
+import { Modal } from "#root/features/layout/components/Modal";
 import React, { useContext, useState } from "react";
 import ReactDOM from "react-dom";
 

@@ -1,4 +1,4 @@
-import './BackButton.scss';
+import '../styles/BackButton.scss';
 import { usePageContext } from "#root/renderer/usePageContext";
 import { ReactComponent as Arrow } from "#root/assets/icons/arrow.svg";
 export { BackButton };

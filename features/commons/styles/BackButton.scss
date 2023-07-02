@@ -1,5 +1,5 @@
-@use "../../scss/variables.scss" as *;
-@use "../../scss/mixins.scss" as *;
+@use "#root/scss/variables.scss" as *;
+@use "#root/scss/mixins.scss" as *;
 .back-button {
   margin-right: auto;
   background-color: $color-primary;

@@ -1,4 +1,4 @@
-import "./MealsEmpty.scss"
+import "../styles/MealsEmpty.scss"
 
 export function MealsEmpty() {
   return (

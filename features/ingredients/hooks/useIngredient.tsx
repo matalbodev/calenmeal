@@ -1,4 +1,4 @@
-import { getIngredients } from "#root/api/ingredients";
+import { getIngredients } from "../api";
 import {Ingredient, IngredientInMeal, IngredientInMealForQuery} from "#root/features/meals/types";
 import {PropsWithChildren, createContext, useContext, useState, SetStateAction} from "react";
 import { useQuery } from "react-query";

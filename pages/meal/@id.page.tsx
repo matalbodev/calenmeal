@@ -1,10 +1,9 @@
-import { IngredientInMealFromQuery, Meal } from "#root/features/meals/types";
-import { Fragment } from "react";
-import "#root/components/features/meal/MealDetail.scss";
+import "#root/features/meals/styles/MealDetail.scss";
 import { useQuery } from "react-query";
 import { getMeal } from "#root/features/meals/api";
 import { usePageContext } from "#root/renderer/usePageContext";
 import { LayoutDefault as Layout } from "#root/layouts/LayoutDefault";
+import { Meal } from "#root/features/meals/types";
 export { Page };
 
 function Page({ data }: { data: Meal }) {

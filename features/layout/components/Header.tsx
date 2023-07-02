@@ -1,6 +1,6 @@
-import "./Header.scss";
+import "../styles/Header.scss";
 import { usePageContext } from "#root/renderer/usePageContext";
-import { BackButton } from "../commons/BackButton";
+import { BackButton } from "#root/features/commons/components/BackButton";
 
 export { Header };
 

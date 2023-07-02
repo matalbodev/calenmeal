@@ -1,5 +1,5 @@
 import { useModalContext } from '#root/renderer/useModalContext';
-import './Modal.scss';
+import '../styles/Modal.scss';
 export { Modal }
 
 function Modal({ title, content }: { title: string; content: React.ReactNode }) {

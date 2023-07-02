@@ -1,5 +1,5 @@
 import { postMeal } from "#root/features/meals/api";
-import { Button } from "#root/features/commons/Button";
+import { Button } from "#root/features/commons/components/Button";
 import { useIngredientContext } from "#root/features/ingredients/hooks/useIngredient";
 import { CalendarMealForQuery } from "#root/features/meals/types";
 import { FormatDate } from "#root/utils/date";

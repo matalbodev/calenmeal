@@ -1,5 +1,5 @@
 import { ComponentProps } from "react";
-import "./Input.scss";
+import "../styles/Input.scss";
 
 export { Input };
 

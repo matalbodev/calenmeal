@@ -1,5 +1,5 @@
 import { Filter } from "#root/features/meals/types";
-import { Button } from "#root/features/commons/Button";
+import { Button } from "#root/features/commons/components/Button";
 import { LayoutDefault as Layout } from "#root/layouts/LayoutDefault";
 import useDate from "#root/features/calendar/hooks/useDate";
 import { MealsList } from "#root/features/meals/components/MealsList";

@@ -1,5 +1,5 @@
+import "../styles/Button.scss";
 import React, { ComponentProps } from "react";
-import "./Button.scss";
 export { Button };
 
 type ButtonProps = {

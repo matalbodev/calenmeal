@@ -1,7 +1,7 @@
+import "../styles/MealCard.scss";
 import { Meal as MealInt } from "#root/features/meals/types";
 import { ReactComponent as Arrow } from "#root/assets/icons/arrow.svg";
 import { deleteMeal } from "#root/features/meals/api";
-import "./MealCard.scss";
 import { useMutation, useQueryClient } from "react-query";
 import useDate from "#root/features/calendar/hooks/useDate";
 import { useSnackBarContext } from "#root/renderer/useSnackBarContext";

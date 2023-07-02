@@ -1,4 +1,4 @@
-import './TitleBar.scss';
+import '../styles/TitleBar.scss';
 export { TitleBar }
 
 function TitleBar({

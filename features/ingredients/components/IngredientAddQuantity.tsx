@@ -1,5 +1,5 @@
-import { Button } from "#root/features/commons/Button";
-import { Input } from "#root/features/commons/Input";
+import { Button } from "#root/features/commons/components/Button";
+import { Input } from "#root/features/commons/components/Input";
 import { useModalContext } from "#root/renderer/useModalContext";
 import { Ingredient } from "#root/features/meals/types";
 import { useState } from "react";

@@ -1,6 +1,6 @@
-import { Content } from "#root/components/layout/Content"
-import { Header } from "#root/components/layout/Header"
-import { NavBar } from "#root/components/layout/NavBar"
+import { Content } from "#root/features/layout/components/Content"
+import { Header } from "#root/features/layout/components/Header"
+import { NavBar } from "#root/features/layout/components/NavBar"
 import { PropsWithChildren, ReactNode } from "react"
 import Div100vh from "react-div-100vh";
 

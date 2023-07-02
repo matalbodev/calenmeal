@@ -1,6 +1,6 @@
-import { TitleBar } from "#root/features/commons/TitleBar";
+import { TitleBar } from "#root/features/commons/components/TitleBar";
 import { IngredientSearch } from "#root/features/ingredients/components/IngredientsSearch";
-import { Input } from "#root/features/commons/Input";
+import { Input } from "#root/features/commons/components/Input";
 import { IngredientsForMealProvider } from "#root/features/ingredients/hooks/useIngredient";
 import { useMeal } from "#root/features/meals/hooks/useMeal";
 import { IngredientsSelected } from "#root/features/ingredients/components/IngredientsSelected";

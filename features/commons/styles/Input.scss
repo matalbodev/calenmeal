@@ -1,4 +1,4 @@
-@use "../../scss/mixins.scss" as *;
+@use "#root/scss/mixins.scss" as *;
 input[type="text"],
 textarea {
   padding: rem(9px) rem(8px);

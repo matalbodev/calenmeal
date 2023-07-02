@@ -1,10 +1,10 @@
+import "../styles/MealsList.scss";
 import { ConvertCalendarMealsToMeal, getMeals, getMealsByDate } from "#root/features/meals/api";
 import useDate from "#root/features/calendar/hooks/useDate";
 import { Filter, Meal, MealTimeFilter } from "#root/features/meals/types";
 import { useQuery } from "react-query";
 import { MealCard } from "./MealCard";
 import { MealsEmpty } from "./MealsEmpty";
-import "./MealsList.scss";
 import { Fragment, useState } from "react";
 
 export { MealsList };
