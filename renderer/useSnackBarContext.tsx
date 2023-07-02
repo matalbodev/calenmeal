@@ -1,7 +1,7 @@
 import { ReactNode, createContext, useContext, useState } from "react";
 import { SnackBarContext, SnackBarState } from "./types";
-import { SnackBar } from "#root/components/layout/SnackBar";
-import { useTransition } from "#root/hooks/useTransition";
+import { SnackBar } from "#root/features/layout/components/SnackBar";
+import { useTransition } from "#root/features/layout/hooks/useTransition";
 
 export { SnackBarProvider };
 // eslint-disable-next-line react-refresh/only-export-components

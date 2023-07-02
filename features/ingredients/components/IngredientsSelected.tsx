@@ -1,4 +1,4 @@
-import { useIngredientContext } from "#root/hooks/useIngredient";
+import { useIngredientContext } from "#root/features/ingredients/hooks/useIngredient";
 import "./IngredientSelected.scss";
 import { FC } from "react";
 

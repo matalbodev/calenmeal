@@ -1,7 +1,7 @@
-import { getMeals } from "#root/api/meal";
-import { MealsList } from "#root/components/features/meal/MealsList"
+import { getMeals } from "#root/features/meals/api";
+import { MealsList } from "#root/features/meals/components/MealsList"
 import { LayoutDefault as Layout } from "#root/layouts/LayoutDefault"
-import { Filter } from "#root/types/meal.types"
+import { Filter } from "#root/features/meals/types"
 
 export { Page, prefetchQueries };
 const prefetchQueries = {

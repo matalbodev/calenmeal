@@ -1,9 +1,9 @@
-import { Meal as MealInt } from "#root/types/meal.types";
+import { Meal as MealInt } from "#root/features/meals/types";
 import { ReactComponent as Arrow } from "#root/assets/icons/arrow.svg";
-import { deleteMeal } from "#root/api/meal";
+import { deleteMeal } from "#root/features/meals/api";
 import "./MealCard.scss";
 import { useMutation, useQueryClient } from "react-query";
-import useDate from "#root/hooks/useDate";
+import useDate from "#root/features/calendar/hooks/useDate";
 import { useSnackBarContext } from "#root/renderer/useSnackBarContext";
 import { ReactComponent as Cross } from "#root/assets/icons/cross.svg";
 
@@ -41,7 +41,7 @@ function MealCard({ meal }: { meal: MealInt }) {
           type="button"
           className="meal-card__delete"
           onClick={() => {
-            deleteMealMutation.mutate(meal.id || 0);
+            deleteMealMutation.mutate(Number(meal?.id) || 0);
           }}
         >
           <Cross fill="#112028" width={8} height={8} />

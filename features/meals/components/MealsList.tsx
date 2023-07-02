@@ -1,6 +1,6 @@
-import { ConvertCalendarMealsToMeal, getMeals, getMealsByDate } from "#root/api/meal";
-import useDate from "#root/hooks/useDate";
-import { Filter, Meal, MealTimeFilter } from "#root/types/meal.types";
+import { ConvertCalendarMealsToMeal, getMeals, getMealsByDate } from "#root/features/meals/api";
+import useDate from "#root/features/calendar/hooks/useDate";
+import { Filter, Meal, MealTimeFilter } from "#root/features/meals/types";
 import { useQuery } from "react-query";
 import { MealCard } from "./MealCard";
 import { MealsEmpty } from "./MealsEmpty";

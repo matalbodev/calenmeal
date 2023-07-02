@@ -1,10 +1,10 @@
 import { FC, useDeferredValue, useEffect, useRef, useState } from "react";
-import { Ingredient } from "#root/types/meal.types";
-import { Input } from "#root/components/commons/Input";
+import { Ingredient } from "#root/features/meals/types";
+import { Input } from "#root/features/commons/Input";
 import { useModalContext } from "#root/renderer/useModalContext";
 import { IngredientAddQuantity } from "./IngredientAddQuantity";
 import "./IngredientSearch.scss";
-import { useIngredientContext } from "#root/hooks/useIngredient";
+import { useIngredientContext } from "#root/features/ingredients/hooks/useIngredient";
 
 export { IngredientSearch };
 

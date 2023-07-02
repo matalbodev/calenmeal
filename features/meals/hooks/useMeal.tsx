@@ -1,4 +1,4 @@
-import { CalendarMealForQuery, MealTime } from "#root/types/meal.types";
+import { CalendarMealForQuery, MealTime } from "#root/features/meals/types";
 import { useState } from "react";
 
 export { useMeal };

@@ -1,4 +1,4 @@
-import { Ingredient } from "#root/types/meal.types";
+import { Ingredient } from "#root/features/meals/types";
 import { FC } from "react";
 
 export { IngredientsInMeal };
