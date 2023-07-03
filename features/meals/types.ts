@@ -53,8 +53,8 @@ export interface CalendarMealForQuery {
 }
 
 export enum Filter {
-  "all",
-  "date",
+  All = '',
+  Date = 'byDate'
 }
 
 export enum MealTimeFilter {
