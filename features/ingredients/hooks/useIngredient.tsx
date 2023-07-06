@@ -1,9 +1,7 @@
 import { getIngredients } from "../api";
-import {Ingredient, IngredientInMeal, IngredientInMealForQuery} from "#root/features/meals/types";
-import {PropsWithChildren, createContext, useContext, useState, SetStateAction} from "react";
+import { Ingredient, IngredientInMeal } from "#root/features/meals/types";
+import { PropsWithChildren, createContext, useContext, useState } from "react";
 import { useQuery } from "react-query";
-
-
 
 interface UseIngredientsForMeal {
   ingredients: Ingredient[];
@@ -20,10 +18,10 @@ const IngredientsForMealContext = createContext<UseIngredientsForMeal>({
 });
 
 const IngredientsForMealProvider = ({ children }: PropsWithChildren) => {
-  const { data : ingredients, error, isLoading } = useQuery("ingredients", getIngredients);
+  const { data: ingredients } = useQuery("ingredients", getIngredients);
   const [selectedIngredients, setSelectedIngredients] = useState<IngredientInMeal[]>([]);
   const addIngredient = ({ ingredient, quantity }: { ingredient: Ingredient; quantity: number }) => {
-    const newIngredient : IngredientInMeal = {
+    const newIngredient: IngredientInMeal = {
       _ingredient: ingredient,
       relation: `/ingredients/${ingredient.id}`,
       quantity: quantity,
@@ -38,7 +36,11 @@ const IngredientsForMealProvider = ({ children }: PropsWithChildren) => {
     );
   };
 
-  return <IngredientsForMealContext.Provider value={{ ingredients, selectedIngredients, addIngredient, removeIngredient }}>{children}</IngredientsForMealContext.Provider>;
+  return (
+    <IngredientsForMealContext.Provider value={{ ingredients, selectedIngredients, addIngredient, removeIngredient }}>
+      {children}
+    </IngredientsForMealContext.Provider>
+  );
 };
 
 const useIngredientContext = () => {
@@ -46,5 +48,5 @@ const useIngredientContext = () => {
   return context;
 };
 
-
+// eslint-disable-next-line react-refresh/only-export-components
 export { IngredientsForMealProvider, useIngredientContext };

@@ -1,6 +1,6 @@
 import "../styles/SnackBar.scss";
 import { SnackBarState } from "#root/renderer/types";
-import { FC, useEffect, useRef } from "react";
+import { FC, useRef } from "react";
 import { ReactComponent as Cross } from "#root/assets/icons/cross.svg";
 import { useSnackBarContext } from "#root/renderer/useSnackBarContext";
 

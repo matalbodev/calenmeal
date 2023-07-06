@@ -18,6 +18,7 @@ const prefetchQueries = {
     fn: getMeals,
   },
 };
+// eslint-disable-next-line react-refresh/only-export-components
 export { Page, prefetchQueries };
 function Page() {
   return (
