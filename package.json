@@ -4,12 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "NODE_TLS_REJECT_UNAUTHORIZED=0 npm run server",
-    "prod": "npm run lint && npm run build && npm run server:prod",
-    "build": "vite build",
-    "server": "ts-node ./server",
-    "server:prod": "cross-env NODE_ENV=production ts-node ./server/index.ts",
-    "lint": "eslint . --max-warnings 0"
+    "dev": "nx exec -- NODE_TLS_REJECT_UNAUTHORIZED=0 npm run server",
+    "prod": "nx exec -- pnpm run _prod ",
+    "build": "nx exec -- vite build",
+    "server": "nx exec -- ts-node ./server",
+    "server:prod": "nx exec -- cross-env NODE_ENV=production ts-node ./server/index.ts",
+    "lint": "nx exec -- eslint . --max-warnings 0",
+    "_prod": "npm run lint && npm run build && npm run server:prod"
   },
   "dependencies": {
     "@tanstack/react-query": "^4.29.19",
@@ -52,9 +53,25 @@
     "sass": "^1.63.2",
     "scss-reset": "^1.4.2",
     "typescript": "^5.0.2",
-    "vite": "^4.3.9"
+    "vite": "^4.3.9",
+    "nx": "16.5.0",
+    "nx-cloud": "latest"
   },
   "imports": {
     "#root/*": "./*.ts"
+  },
+  "nx": {
+    "targets": {
+      "prod": {
+        "outputs": [
+          "{projectRoot}/dist"
+        ]
+      },
+      "build": {
+        "outputs": [
+          "{projectRoot}/dist"
+        ]
+      }
+    }
   }
 }
