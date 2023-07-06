@@ -12,6 +12,10 @@
     "lint": "eslint . --max-warnings 0"
   },
   "dependencies": {
+    "@tanstack/react-query": "^4.29.19",
+    "@trpc/client": "^10.33.0",
+    "@trpc/react-query": "^10.33.0",
+    "@trpc/server": "^10.33.0",
     "@vitejs/plugin-react": "^4.0.0",
     "compression": "^1.7.4",
     "cross-env": "^7.0.3",
@@ -26,7 +30,8 @@
     "sirv": "^2.0.2",
     "ts-node": "^10.9.1",
     "vite-plugin-ssr": "^0.4.131",
-    "vite-plugin-svgr": "^3.2.0"
+    "vite-plugin-svgr": "^3.2.0",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@fastify/compress": "^6.1.1",
