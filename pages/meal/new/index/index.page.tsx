@@ -2,7 +2,7 @@ import { TitleBar } from "#root/features/commons/components/TitleBar";
 import { IngredientSearch } from "#root/features/ingredients/components/IngredientsSearch";
 import { Input } from "#root/features/commons/components/Input";
 import { IngredientsForMealProvider } from "#root/features/ingredients/hooks/useIngredient";
-import { useMeal } from "#root/features/meals/hooks/useMeal";
+import { useMeal } from "#root/features/meals/hooks/useMeals";
 import { IngredientsSelected } from "#root/features/ingredients/components/IngredientsSelected";
 import { MealCreateNew } from "#root/features/meals/components/MealCreateNew";
 import useDate from "#root/features/calendar/hooks/useDate";
